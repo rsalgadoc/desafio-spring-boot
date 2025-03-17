@@ -12,7 +12,7 @@
 
 ## Probar la aplicación
 
-- Ir a postaman y importar la coleccion "Previred Task Management.postman_collection.json"
+- Ir a Postman e importar la coleccion "Previred Task Management.postman_collection.json", el archivo se encuentra en la base del repositorio
 
 - Comenzar enviando el request POST Sign In, para obtener el Token.
 
