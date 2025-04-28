@@ -6,7 +6,7 @@ services:
     ports:
       - "8081:8080"
     networks:
-      - bankapp
+      - taskmanagement
     restart: always
 networks:
-  bankapp:
+  taskmanagement:
