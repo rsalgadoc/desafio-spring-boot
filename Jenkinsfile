@@ -4,7 +4,7 @@ pipeline {
         environment{
             DOCKER_IMAGE = 'taskmanagement'
             IMAGE_TAG = 'latest'
-            DOCKER_CREDENTIALS = 'Docker-hub'  // Jenkins credentials ID for Docker Hub or your registry
+            DOCKER_CREDENTIALS = 'DOCKER_CREDENTIALS'  // Jenkins credentials ID for Docker Hub or your registry
             USERNAME= 'rsalgadoc'
         }
 
