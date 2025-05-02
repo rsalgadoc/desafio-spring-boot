@@ -3,32 +3,26 @@
 #----------------------------------
 
 # Import docker image with maven installed
-FROM maven:3.8.3-openjdk-17 AS builder 
-
-# Add labels to the image to filter out if we have multiple application running
-LABEL app=taskmanagement
-
-# Set working directory
-WORKDIR /src
-
-# Copy source code from local to container
-COPY . /src
-
-# Build application and skip test cases
-RUN mvn clean install -DskipTests=true
+FROM eclipse-temurin:17-jdk-jammy as builder
+WORKDIR /
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:go-offline
+COPY ./src ./src
+RUN ./mvnw clean install
 
 #--------------------------------------
 # Stage 2
 #--------------------------------------
 
 # Import small size java image
-FROM openjdk:17-alpine AS deployer
+FROM eclipse-temurin:17-jre-jammy AS deployer
 
 # Copy build from stage 1 (builder)
-COPY --from=builder /src/target/*.jar /src/target/taskmanagement.jar
+COPY --from=builder /target/*.jar /target/taskmanagement.jar
 
 # Expose application port 
 EXPOSE 8080
 
 # Start the application
-ENTRYPOINT ["java", "-jar", "/src/target/taskmanagement.jar"]
+ENTRYPOINT ["java", "-jar", "/target/taskmanagement.jar"]
