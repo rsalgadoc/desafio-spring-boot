@@ -41,7 +41,7 @@ docker compose up -d
 
 ## Probar la aplicación
 
-- Ir a Postman e importar la coleccion "Previred Task Management.postman_collection.json", el archivo se encuentra en la base del repositorio
+- Ir a Postman e importar la coleccion [Previred_Task_Management.postman_collection.json](Previred_Task_Management.postman_collection.json)
 
 - Comenzar enviando el request POST Sign In, para obtener el Token.
 
