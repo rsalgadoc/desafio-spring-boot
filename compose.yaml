@@ -3,7 +3,7 @@ services:
     build: .
     container_name: taskmanagement
     ports:
-      - "8081:8080"
+      - "8080:8080"
     networks:
       - taskmanagement
     restart: always

@@ -3,7 +3,7 @@
 #----------------------------------
 
 # Import docker image with maven installed
-FROM eclipse-temurin:17-jdk-jammy as builder
+FROM eclipse-temurin:17-jdk-jammy AS builder
 WORKDIR /
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./

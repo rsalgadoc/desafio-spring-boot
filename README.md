@@ -1,12 +1,41 @@
 # Instrucciones cómo ejecutar y probar la aplicación
 
+
 ## Ejecutar
 
-- Clonar repositorio
-- Abrir una ventana de consola y navegar a la carpeta donde se encuentra el proyecto 
--  ejecutar el siguiente comando
+Desde la línea de comandos, clone y ejecute la aplicación:
+
 ```bash
-	./mvnw spring-boot:run
+# Clone this repository
+git clone https://github.com/rsalgadoc/desafio-spring-boot.git
+
+# Go into the repository
+cd desafio-spring-boot
+
+```
+
+## Opcion 1 para ejecutar(Maven)
+
+```bash
+# Execute the command
+./mvnw spring-boot:run
+```
+
+## Opcion 2 para ejecutar(Docker)
+
+```bash
+# Execute the command
+docker build -t rsalgadoc/taskmanagement .
+
+# Execute the command
+docker run -d -p 8080:8080 rsalgadoc/taskmanagement
+```
+
+## Opcion 3 para ejecutar(Docker Compose)
+
+```bash
+# Execute the command
+docker compose up -d 
 ```
 
 
