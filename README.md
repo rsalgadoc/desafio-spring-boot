@@ -28,7 +28,7 @@ cd desafio-spring-boot
 docker build -t rsalgadoc/taskmanagement .
 
 # Execute the command
-docker run -d -p 8080:8080 rsalgadoc/taskmanagement
+docker run -d --name backend-taskmanagement -p 8083:8080 --restart always rsalgadoc/taskmanagement
 ```
 
 ## Opcion 3 para ejecutar(Docker Compose)
